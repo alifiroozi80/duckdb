@@ -8,30 +8,30 @@
   </picture>
 
 <h3 align="center">GORM DuckDB Driver</h3>
-
+	
 <p align="center">
-  <a href="https://pkg.go.dev/github.com/alifiroozi80/duckdb">
+  <a href="https://pkg.go.dev/github.com/alifiroozi80/duckdb" style="text-decoration: none;">
     <img src="https://pkg.go.dev/badge/github.com/alifiroozi80/duckdb.svg" alt="Go Reference">
   </a>
-  <a href="https://img.shields.io/github/go-mod/go-version/alifiroozi80/duckdb?logo=go">
+  <a href="https://img.shields.io/github/go-mod/go-version/alifiroozi80/duckdb?logo=go" style="text-decoration: none;">
     <img src="https://img.shields.io/github/go-mod/go-version/alifiroozi80/duckdb?logo=go" alt="Go version">
   </a>
-  <a href="https://img.shields.io/github/v/release/alifiroozi80/duckdb">
+  <a href="https://img.shields.io/github/v/release/alifiroozi80/duckdb" style="text-decoration: none;">
     <img src="https://img.shields.io/github/v/release/alifiroozi80/duckdb" alt="GitHub release">
   </a>
-  <a href="https://goreportcard.com/report/github.com/alifiroozi80/duckdb">
+  <a href="https://goreportcard.com/report/github.com/alifiroozi80/duckdb" style="text-decoration: none;">
     <img src="https://goreportcard.com/badge/github.com/alifiroozi80/duckdb" alt="Go Report Card">
   </a>
-  <a href="https://img.shields.io/github/license/alifiroozi80/duckdb?&color=blue">
+  <a href="https://img.shields.io/github/license/alifiroozi80/duckdb?&color=blue" style="text-decoration: none;">
     <img src="https://img.shields.io/github/license/alifiroozi80/duckdb?&color=blue" alt="License">
   </a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/alifiroozi80/duckdb/issues">Report Bug</a>
-  <!-- · -->
-  <!-- <a href="https://github.com/alifiroozi80/duckdb/issues">Request Feature</a> -->
-</p>
+  <p align="center">
+    <a href="https://github.com/alifiroozi80/duckdb/issues">Report Bug</a>
+    <!-- · -->
+    <!-- <a href="https://github.com/alifiroozi80/duckdb/issues">Request Feature</a> -->
+  </p>
 </div>
 
 ---
