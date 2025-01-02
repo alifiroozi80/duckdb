@@ -8,18 +8,30 @@
   </picture>
 
 <h3 align="center">GORM DuckDB Driver</h3>
-	
-	[![Go Reference](https://pkg.go.dev/badge/github.com/alifiroozi80/duckdb.svg)](https://pkg.go.dev/github.com/alifiroozi80/duckdb)
-	[![GitHub go.mod Go version (subdirectory of monorepo)](https://img.shields.io/github/go-mod/go-version/alifiroozi80/duckdb?logo=go)](https://img.shields.io/github/go-mod/go-version/alifiroozi80/duckdb?logo=go)
-	[![GitHub release (latest by date)](https://img.shields.io/github/v/release/alifiroozi80/duckdb)](https://img.shields.io/github/v/release/alifiroozi80/duckdb)
-	[![Go Report Card](https://goreportcard.com/badge/github.com/alifiroozi80/duckdb)](https://goreportcard.com/report/github.com/alifiroozi80/duckdb)
-	[![GitHub License](https://img.shields.io/github/license/alifiroozi80/duckdb?&color=blue)](https://img.shields.io/github/license/alifiroozi80/duckdb?&color=blue)
 
-  <p align="center">
-    <a href="https://github.com/alifiroozi80/duckdb/issues">Report Bug</a>
-    <!-- · -->
-    <!-- <a href="https://github.com/alifiroozi80/duckdb/issues">Request Feature</a> -->
-  </p>
+<p align="center">
+  <a href="https://pkg.go.dev/github.com/alifiroozi80/duckdb">
+    <img src="https://pkg.go.dev/badge/github.com/alifiroozi80/duckdb.svg" alt="Go Reference">
+  </a>
+  <a href="https://img.shields.io/github/go-mod/go-version/alifiroozi80/duckdb?logo=go">
+    <img src="https://img.shields.io/github/go-mod/go-version/alifiroozi80/duckdb?logo=go" alt="Go version">
+  </a>
+  <a href="https://img.shields.io/github/v/release/alifiroozi80/duckdb">
+    <img src="https://img.shields.io/github/v/release/alifiroozi80/duckdb" alt="GitHub release">
+  </a>
+  <a href="https://goreportcard.com/report/github.com/alifiroozi80/duckdb">
+    <img src="https://goreportcard.com/badge/github.com/alifiroozi80/duckdb" alt="Go Report Card">
+  </a>
+  <a href="https://img.shields.io/github/license/alifiroozi80/duckdb?&color=blue">
+    <img src="https://img.shields.io/github/license/alifiroozi80/duckdb?&color=blue" alt="License">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/alifiroozi80/duckdb/issues">Report Bug</a>
+  <!-- · -->
+  <!-- <a href="https://github.com/alifiroozi80/duckdb/issues">Request Feature</a> -->
+</p>
 </div>
 
 ---
