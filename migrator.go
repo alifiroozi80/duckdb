@@ -301,37 +301,6 @@ func (m Migrator) GetTables() (tableList []string, err error) {
 }
 
 // Columns
-
-func (m Migrator) AddColumn(value interface{}, field string) error {
-	return m.RunWithValue(value, func(stmt *gorm.Statement) error {
-		if f := stmt.Schema.LookUpField(field); f != nil {
-			// avoid using the same name field
-			if stmt.Schema == nil {
-				return errors.New("failed to get schema")
-			}
-			f := stmt.Schema.LookUpField(field)
-			if f == nil {
-				return fmt.Errorf("failed to look up field with name: %s", field)
-			}
-			if !f.IgnoreMigration {
-				return m.DB.Exec(
-					"ALTER TABLE ? %s ADD COLUMN ? ?",
-					m.CurrentTable(stmt), clause.Column{Name: f.DBName}, m.DB.Migrator().FullDataTypeOf(f),
-				).Error
-			}
-			if f.Comment != "" {
-				if err := m.DB.Exec(
-					"COMMENT ON COLUMN ?.? IS ?",
-					m.CurrentTable(stmt), clause.Column{Name: f.DBName}, gorm.Expr(m.Migrator.Dialector.Explain("$1", f.Comment)),
-				).Error; err != nil {
-					return err
-				}
-			}
-		}
-		return nil
-	})
-}
-
 func (m Migrator) DropColumn(dst interface{}, field string) error {
 	if err := m.Migrator.DropColumn(dst, field); err != nil {
 		return err
@@ -381,10 +350,6 @@ func (m Migrator) MigrateColumn(value interface{}, field *schema.Field, columnTy
 		}
 		return nil
 	})
-}
-
-func (m Migrator) AlterColumn(value interface{}, field string) error {
-	return ErrDuckDBNotSupported
 }
 
 func (m Migrator) HasColumn(value interface{}, field string) bool {
