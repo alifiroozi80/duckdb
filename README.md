@@ -52,13 +52,16 @@ type Product struct {
 
 func main() {
 	// duckdb extentions: .ddb, .duckdb, .db
-        db, err := gorm.Open(duckdb.Open("duckdb.ddb"), &gorm.Config{})
+	db, err := gorm.Open(duckdb.Open("duckdb.ddb"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
 	// Migrate the schema
-	db.AutoMigrate(&Product{})
+	err = db.AutoMigrate(&Product{})
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	// Create
 	db.Create(&Product{Code: "D42", Price: 100})
