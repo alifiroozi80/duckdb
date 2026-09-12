@@ -15,15 +15,15 @@ The migration changes the minimum Go version, embedded DuckDB engine, dependency
 - Do not add a `toolchain` directive. CI selects the maintained Go 1.27 patch release, while downstream applications control their own toolchain.
 - Use `github.com/duckdb/duckdb-go/v2` v2.10505.0, embedding DuckDB 1.5.5.
 - Track latest stable tagged releases for direct Go dependencies and CI actions.
-- Require CGO and verify the module on Debian 13, macOS, and Windows amd64. Use UCRT64 GCC on Windows.
-- Do not claim FreeBSD support.
+- Require CGO and verify the module on Debian 13 and macOS.
+- Do not claim Windows or FreeBSD support.
 
 ## Consequences
 
 - Consumers must build this module with Go 1.27 or newer.
 - Applications receive DuckDB 1.5.5 behavior, including the v2 driver's JSON scanning semantics and opt-in Arrow integration.
 - Binaries continue to link the prebuilt DuckDB static library by default and remain larger than dynamically linked alternatives.
-- CI takes longer because it exercises three operating systems and provisions a Windows C toolchain.
+- CI exercises Debian and macOS; Windows-specific regressions are outside the supported contract.
 - Future Go, driver, and platform compatibility changes must update this ADR and the README together.
 
 ## Alternatives Considered
@@ -31,4 +31,5 @@ The migration changes the minimum Go version, embedded DuckDB engine, dependency
 - Keep Go 1.24, matching the upstream driver's minimum. Rejected in favor of a single current Go baseline.
 - Add a `toolchain` directive. Rejected because it has no effect when this module is consumed as a dependency and CI already selects the maintainer toolchain.
 - Test only Linux. Rejected because the upstream driver ships platform-specific native libraries whose integration should be exercised.
+- Test Windows. Rejected because Windows is outside this project's support contract.
 - Keep the legacy driver or stop at the first repository-migration release. Rejected because the project should use the maintained official driver and latest stable DuckDB release.

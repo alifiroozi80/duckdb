@@ -37,8 +37,8 @@
 
 - Go 1.27 or later.
 - `github.com/duckdb/duckdb-go/v2` v2.10505.0, which embeds DuckDB 1.5.5.
-- CGO is required. CI covers Debian 13, macOS, and Windows amd64; Windows builds use UCRT64 GCC.
-- FreeBSD is not part of this project's tested platform contract. The upstream driver requires a custom static DuckDB library on FreeBSD.
+- CGO is required. CI covers Debian 13 and macOS.
+- Windows and FreeBSD are not supported by this project. The upstream driver requires a custom static DuckDB library on FreeBSD.
 
 ## Quick Start
 
