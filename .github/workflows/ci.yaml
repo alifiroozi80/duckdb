@@ -8,25 +8,51 @@ permissions:
   contents: read
 
 jobs:
-  run-tests:
-    strategy:
-      matrix:
-        go: ['>=1.23.0']
-        platform: [ubuntu-latest]
+  debian:
     runs-on: ubuntu-latest
+    container:
+      image: debian:13-slim
 
     steps:
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v5
+    - name: Install build dependencies
+      run: apt-get update && apt-get install -y --no-install-recommends build-essential ca-certificates git && rm -rf /var/lib/apt/lists/*
+
+    - name: Check out code
+      uses: actions/checkout@v7
+
+    - name: Set up Go
+      uses: actions/setup-go@v7
       with:
-        go-version: ${{ matrix.go }}
+        go-version: '1.27.x'
+        cache-dependency-path: go.sum
 
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v4
+    - name: Verify module graph
+      run: go mod verify && go mod tidy -diff
 
-      # Run build of the application
-    - name: Run build
-      run: go build .
+    - name: Vet
+      run: go vet ./...
 
-    - name: Run tests
+    - name: Build
+      run: go build ./...
+
+    - name: Test
+      run: go test -race -count=1 -v ./...
+
+  macos:
+    runs-on: macos-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v7
+
+    - name: Set up Go
+      uses: actions/setup-go@v7
+      with:
+        go-version: '1.27.x'
+        cache-dependency-path: go.sum
+
+    - name: Build
+      run: go build ./...
+
+    - name: Test
       run: go test -race -count=1 -v ./...
